@@ -1,0 +1,5 @@
+{
+  "name": "Certifica Fácil",
+  "description": "A web application to automate the process of verifying attendance from spreadsheets, approving participants, and generating and sending course certificates.",
+  "requestFramePermissions": []
+}
