@@ -104,7 +104,7 @@ const App: React.FC = () => {
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-slate-100">
       <div className="w-full max-w-5xl mx-auto">
         <header className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-green-800">Sistema Avançado de Certificação</h1>
+            <h1 className="text-4xl font-bold text-green-800">Sistema Avançado de Certificações</h1>
             <p className="text-slate-600 mt-2">Automatize a geração e envio de certificados com facilidade.</p>
         </header>
         
