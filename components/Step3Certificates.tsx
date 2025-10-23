@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import { type ProcessedStudent, type CourseDetails } from '../types';
 import CertificateTemplate from './CertificateTemplate';
@@ -65,7 +64,7 @@ const Step3Certificates: React.FC<Step3CertificatesProps> = ({ approvedStudents,
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setSelectedStudent(student)}
-                className="text-sm text-blue-600 hover:underline"
+                className="text-sm text-green-600 hover:underline"
               >
                 Visualizar
               </button>
@@ -83,7 +82,7 @@ const Step3Certificates: React.FC<Step3CertificatesProps> = ({ approvedStudents,
 
       <div className="flex justify-between">
         <button onClick={onBack} className="px-6 py-2 bg-gray-600 text-white font-semibold rounded-md shadow-sm hover:bg-gray-700 transition-colors">Voltar</button>
-        <button onClick={onNext} className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-md shadow-sm hover:bg-blue-700 transition-colors">
+        <button onClick={onNext} className="px-6 py-2 bg-green-600 text-white font-semibold rounded-md shadow-sm hover:bg-green-700 transition-colors">
           Preparar Envio de E-mails
         </button>
       </div>

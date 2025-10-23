@@ -28,7 +28,7 @@ const FileInput: React.FC<{ id: string; label: string; fileType: string; onChang
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
-      <label htmlFor={id} className="w-full flex items-center justify-center px-4 py-6 bg-white border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors">
+      <label htmlFor={id} className="w-full flex items-center justify-center px-4 py-6 bg-white border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-green-500 hover:bg-green-50 transition-colors">
         <div className="text-center">
           <UploadIcon className="mx-auto h-10 w-10 text-gray-400" />
           <p className="mt-2 text-sm text-gray-600">{fileName || `Clique para carregar ${fileType}`}</p>
@@ -71,9 +71,9 @@ const Step1Upload: React.FC<Step1UploadProps> = ({
       <div>
         <h3 className="text-lg font-medium text-gray-800 mb-2">Detalhes do Curso</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <input type="text" name="nomeCurso" value={courseDetails.nomeCurso} onChange={handleInputChange} placeholder="Nome do Curso" className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
-          <input type="text" name="cargaHoraria" value={courseDetails.cargaHoraria} onChange={handleInputChange} placeholder="Carga Horária (ex: 40 Horas)" className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
-          <input type="text" name="dataCurso" value={courseDetails.dataCurso} onChange={handleInputChange} placeholder="Data de Realização" className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+          <input type="text" name="nomeCurso" value={courseDetails.nomeCurso} onChange={handleInputChange} placeholder="Nome do Curso" className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500" />
+          <input type="text" name="cargaHoraria" value={courseDetails.cargaHoraria} onChange={handleInputChange} placeholder="Carga Horária (ex: 40 Horas)" className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500" />
+          <input type="text" name="dataCurso" value={courseDetails.dataCurso} onChange={handleInputChange} placeholder="Data de Realização" className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500" />
         </div>
       </div>
       <div>
@@ -86,7 +86,7 @@ const Step1Upload: React.FC<Step1UploadProps> = ({
         <button
           onClick={onNext}
           disabled={!formValid}
-          className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-md shadow-sm hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+          className="px-6 py-2 bg-green-600 text-white font-semibold rounded-md shadow-sm hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
         >
           Processar Frequência
         </button>

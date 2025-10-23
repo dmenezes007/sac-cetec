@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { type ProcessedStudent, type CourseDetails } from '../types';
 
@@ -15,11 +14,11 @@ const CertificateTemplate: React.FC<CertificateTemplateProps> = ({ student, cour
       {backgroundImage ? (
         <img src={backgroundImage} alt="Certificate Background" className="absolute top-0 left-0 w-full h-full object-cover -z-10" />
       ) : (
-        <div className="absolute top-0 left-0 w-full h-full border-8 border-blue-800 bg-blue-50 -z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-full border-8 border-green-800 bg-green-50 -z-10"></div>
       )}
-      <h1 className="text-5xl font-bold text-blue-900 tracking-wider">Certificado de Conclusão</h1>
+      <h1 className="text-5xl font-bold text-green-900 tracking-wider">Certificado de Conclusão</h1>
       <p className="mt-12 text-xl">Certificamos que</p>
-      <p className="mt-4 text-4xl font-semibold text-blue-800" style={{ fontFamily: '"Playfair Display", serif' }}>
+      <p className="mt-4 text-4xl font-semibold text-green-800" style={{ fontFamily: '"Playfair Display", serif' }}>
         {student['Nome Completo']}
       </p>
       <p className="mt-8 text-lg max-w-2xl mx-auto leading-relaxed">

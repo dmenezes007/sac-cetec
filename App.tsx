@@ -6,9 +6,11 @@ import Step2Results from './components/Step2Results';
 import Step3Certificates from './components/Step3Certificates';
 import Step4Email from './components/Step4Email';
 import { UploadIcon, CheckCircleIcon, AwardIcon, MailIcon } from './components/icons';
+import LoginPage from './components/LoginPage';
 
 const App: React.FC = () => {
   const [step, setStep] = useState<number>(1);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [courseDetails, setCourseDetails] = useState<CourseDetails>({
     nomeCurso: '',
     cargaHoraria: '',
@@ -25,6 +27,14 @@ const App: React.FC = () => {
   const approvedStudents = useMemo(() => {
     return processedData.filter(student => student.status === 'Aprovado');
   }, [processedData]);
+
+  const handleLogin = (password: string) => {
+    if (password === 'SAC_CETEC_2025') {
+      setIsLoggedIn(true);
+    } else {
+      alert('Senha incorreta');
+    }
+  };
 
   // FIX: Refactored to remove redundant FileReader logic which caused variable redeclaration errors.
   // The logic for determining total classes from the file was also unused.
@@ -86,11 +96,15 @@ const App: React.FC = () => {
       { number: 4, name: 'Envio', icon: <MailIcon className="h-6 w-6"/> }
   ]
 
+  if (!isLoggedIn) {
+    return <LoginPage onLogin={handleLogin} />;
+  }
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-slate-100">
       <div className="w-full max-w-5xl mx-auto">
         <header className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-blue-800">Certifica Fácil</h1>
+            <h1 className="text-4xl font-bold text-green-800">Sistema Avançado de Certificação</h1>
             <p className="text-slate-600 mt-2">Automatize a geração e envio de certificados com facilidade.</p>
         </header>
         
@@ -99,11 +113,11 @@ const App: React.FC = () => {
                 {steps.map((s, index) => (
                     <React.Fragment key={s.number}>
                         <li className="flex items-center">
-                            <span className={`flex items-center justify-center w-12 h-12 rounded-full font-bold ${step >= s.number ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-600'}`}>
+                            <span className={`flex items-center justify-center w-12 h-12 rounded-full font-bold ${step >= s.number ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-600'}`}>
                                 {s.icon}
                             </span>
                         </li>
-                        {index < steps.length - 1 && <div className={`flex-auto border-t-2 transition-colors duration-500 ${step > s.number ? 'border-blue-600' : 'border-gray-200'}`} />}
+                        {index < steps.length - 1 && <div className={`flex-auto border-t-2 transition-colors duration-500 ${step > s.number ? 'border-green-600' : 'border-gray-200'}`} />}
                     </React.Fragment>
                 ))}
             </ol>
@@ -112,7 +126,7 @@ const App: React.FC = () => {
         <main className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-gray-200">
           {isLoading ? (
             <div className="flex flex-col items-center justify-center h-64">
-              <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-600"></div>
+              <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-green-600"></div>
               <p className="mt-4 text-lg font-semibold text-gray-700">Processando dados...</p>
             </div>
           ) : error ? (

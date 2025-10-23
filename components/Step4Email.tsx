@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { type ProcessedStudent } from '../types';
 import { MailIcon, CheckCircleIcon } from './icons';
@@ -58,7 +57,7 @@ const Step4Email: React.FC<Step4EmailProps> = ({ approvedStudents, onBack }) => 
             <CheckCircleIcon className="h-16 w-16 text-green-500 mx-auto mb-4" />
             <h2 className="text-2xl font-bold mb-2">E-mails Enviados!</h2>
             <p className="text-gray-600 mb-6">A simulação de envio de e-mails para {selectedStudents.size} participante(s) foi concluída com sucesso.</p>
-            <button onClick={onBack} className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-md shadow-sm hover:bg-blue-700 transition-colors">Voltar</button>
+            <button onClick={onBack} className="px-6 py-2 bg-green-600 text-white font-semibold rounded-md shadow-sm hover:bg-green-700 transition-colors">Voltar</button>
         </div>
     )
   }
@@ -75,7 +74,7 @@ const Step4Email: React.FC<Step4EmailProps> = ({ approvedStudents, onBack }) => 
           <input
             type="checkbox"
             id="selectAll"
-            className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            className="h-4 w-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
             checked={selectedStudents.size === approvedStudents.length}
             onChange={handleSelectAll}
           />
@@ -92,7 +91,7 @@ const Step4Email: React.FC<Step4EmailProps> = ({ approvedStudents, onBack }) => 
             <input
               type="checkbox"
               id={`student-${student.id}`}
-              className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              className="h-4 w-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
               checked={selectedStudents.has(student.id)}
               onChange={() => handleSelect(student.id)}
             />
@@ -109,7 +108,7 @@ const Step4Email: React.FC<Step4EmailProps> = ({ approvedStudents, onBack }) => 
         <button
           onClick={handleSendEmails}
           disabled={isSending || selectedStudents.size === 0}
-          className="flex items-center justify-center gap-2 w-64 px-6 py-2 bg-blue-600 text-white font-semibold rounded-md shadow-sm hover:bg-blue-700 disabled:bg-gray-400 transition-colors"
+          className="flex items-center justify-center gap-2 w-64 px-6 py-2 bg-green-600 text-white font-semibold rounded-md shadow-sm hover:bg-green-700 disabled:bg-gray-400 transition-colors"
         >
           {isSending ? (
             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>

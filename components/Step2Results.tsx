@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo } from 'react';
 import { type ProcessedStudent } from '../types';
 import { DownloadIcon } from './icons';
@@ -38,7 +37,7 @@ const Step2Results: React.FC<Step2ResultsProps> = ({ processedData, setProcessed
             id="minPercentage"
             value={minPercentage}
             onChange={(e) => setMinPercentage(Number(e.target.value))}
-            className="w-24 px-2 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            className="w-24 px-2 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
             min="0"
             max="100"
           />
@@ -86,7 +85,7 @@ const Step2Results: React.FC<Step2ResultsProps> = ({ processedData, setProcessed
       
       <div className="flex justify-between">
         <button onClick={onBack} className="px-6 py-2 bg-gray-600 text-white font-semibold rounded-md shadow-sm hover:bg-gray-700 transition-colors">Voltar</button>
-        <button onClick={onNext} className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-md shadow-sm hover:bg-blue-700 disabled:bg-gray-400" disabled={approvedCount === 0}>
+        <button onClick={onNext} className="px-6 py-2 bg-green-600 text-white font-semibold rounded-md shadow-sm hover:bg-green-700 disabled:bg-gray-400" disabled={approvedCount === 0}>
           Gerar Certificados para Aprovados ({approvedCount})
         </button>
       </div>
