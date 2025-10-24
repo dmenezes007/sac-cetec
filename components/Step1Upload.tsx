@@ -79,7 +79,10 @@ const Step1Upload: React.FC<Step1UploadProps> = ({
       <div>
          <h3 className="text-lg font-medium text-gray-800 mb-2">Modelo do Certificado (Opcional)</h3>
          <FileInput id="certificateBgFile" label="Fundo do Certificado (Imagem)" fileType="image/png, image/jpeg" onChange={setCertificateBgFile} />
-         <p className="text-xs text-gray-500 mt-1">Faça o upload de uma imagem de fundo. Caso não seja fornecida, um modelo padrão será usado. Substitui a necessidade de um modelo .docx, que não pode ser processado no navegador.</p>
+         <div className="text-xs text-gray-500 mt-1">
+          <p>Faça o upload de uma imagem de fundo. Caso não seja fornecida, um modelo padrão será usado.</p>
+          <a href="/modelo_certificado.svg" download className="text-green-600 hover:underline">Baixar modelo com placeholders.</a>
+         </div>
       </div>
 
       <div className="flex justify-end">
